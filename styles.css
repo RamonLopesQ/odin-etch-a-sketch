@@ -1,0 +1,18 @@
+body{
+    margin: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+}
+.cell{
+    padding: 2px;
+    border:1px solid red;
+}
+
+#changeButton{
+    position:absolute;
+    top: 0;
+    right: 0;
+}
+
