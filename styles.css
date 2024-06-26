@@ -4,6 +4,7 @@ body{
     display: flex;
     flex-direction:column;
     justify-content: center;
+    align-items: center;
     background-color: #A9F5D0;
 }
 
@@ -19,9 +20,7 @@ body{
 }
 
 div .columns{
-    padding: 10px;
     border: 1px solid black;
-    
 }
 
 #container{

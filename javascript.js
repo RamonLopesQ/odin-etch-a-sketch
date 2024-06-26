@@ -3,20 +3,21 @@ let rows = document.getElementsByClassName("rows");
 let columns = document.getElementsByClassName("columns");
 let clearButton = document.querySelector("#changeButton");
 
-function defaultGrid(){
-    makeGrid(16,16)
-}
-
-function makeGrid(rowNum,columnNum){
-   
-    for (let i = 0; i < rowNum; i++){
+function makeGrid(gridNum){
+    let cellSize = ((480/gridNum)-2).toFixed(2);
+    let gridSize = 480;
+    for (let i = 0; i < gridNum; i++){
         let row = document.createElement("div");
         row.classList.add("rows");
         container.appendChild(row);
-        for (let j = 0; j < columnNum; j++){
+        container.style.height = gridSize + "px"
+        container.style.width = gridSize + "px"
+        for (let j = 0; j < gridNum; j++){
             let column = document.createElement("div");
             column.classList.add("columns");
-            column.style.backgroundColor = "#F7BE81"
+            column.style.backgroundColor = "#F7BE81";
+            column.style.height = cellSize + "px";
+            column.style.width = cellSize + "px";
             column.addEventListener("mouseenter", e => e.target.style.backgroundColor = '#BCA9F5')
             rows[i].appendChild(column);
         }
@@ -24,13 +25,13 @@ function makeGrid(rowNum,columnNum){
 }
 
 function changeGrid(){
-    let newRowSize = prompt("Enter the new row size (between 1 and 100)");
-    let newColumnSize = prompt("Enter the new column size (between 1 and 100)");
-    if ((newRowSize <= 100) && (newColumnSize <= 100)) {
+    let newSize = prompt("Enter the new row size (between 1 and 100)");
+    
+    if (newSize <= 100) {
         while (container.hasChildNodes()) {
             container.removeChild(container.lastChild);
         }
-        makeGrid(newRowSize,newColumnSize);
+        makeGrid(newSize);
     } else{
         alert("Insert a valid value");
         changeGrid();
@@ -38,4 +39,4 @@ function changeGrid(){
 }
 
 clearButton.addEventListener("click", changeGrid)
-window.onload = defaultGrid();
+window.onload = makeGrid(16);
