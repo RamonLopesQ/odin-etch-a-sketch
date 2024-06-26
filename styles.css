@@ -4,15 +4,43 @@ body{
     display: flex;
     flex-direction:column;
     justify-content: center;
+    background-color: #A9F5D0;
 }
-.cell{
-    padding: 2px;
-    border:1px solid red;
+
+#header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#header h1{
+    color: #4B088A;
+    font-weight: 800;
+}
+
+div .columns{
+    padding: 10px;
+    border: 1px solid black;
+    
+}
+
+#container{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 #changeButton{
-    position:absolute;
-    top: 0;
-    right: 0;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color:#CECEF6;
+    font-size: 17px;
 }
+
 
